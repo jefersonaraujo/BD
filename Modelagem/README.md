@@ -14,10 +14,10 @@
 
 [![DER](https://raw.githubusercontent.com/jefersonaraujo/BD/master/Img/der.PNG "DER")](https://raw.githubusercontent.com/jefersonaraujo/BD/master/Img/der.PNG "DER")
 
-PRIMEIRO ALGARISMO - OBRIGATORIEDADE
-0 - NAO OBRIGATORIO
-1 - OBRIGATORIO
+- PRIMEIRO ALGARISMO - OBRIGATORIEDADE
+###### 0 - NAO OBRIGATORIO0 - NAO OBRIGATORIO
+###### 1 - OBRIGATORIO
 
-SEGUNDO ALGARISMO - CARDINALIDADE
-1 - MAXIMO DE UM
-N - MAIS DE UM
+- SEGUNDO ALGARISMO - CARDINALIDADE
+###### 1 - MAXIMO DE UM
+###### N - MAIS DE UM

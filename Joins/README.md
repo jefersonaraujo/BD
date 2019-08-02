@@ -2,21 +2,13 @@
 IDCLIENTE|NOME   |SEXO|EMAIL          |CPF    |
 ---------|-------|----|---------------|-------|
         1|JOAO   |M   |JOAO@IG.COM    |98547-6|
----------|-------|----|---------------|-------|        
         2|CARLOS |M   |CARLOS@TERA.COM|86664-7|
----------|-------|----|---------------|-------|
         3|ANA    |F   |ANA@GLOBO.COM  |75658-5|
----------|-------|----|---------------|-------|        
         4|JORGE  |M   |JORGE@IG.COM   |88657-5|
----------|-------|----|---------------|-------|        
         5|CLARA  |M   |               |99754-7|
----------|-------|----|---------------|-------|        
         6|CELIA  |F   |JOAO@TERRA.COM |77558-5|
----------|-------|----|---------------|-------|        
         7|ANTONIO|M   |               |78558-6|
----------|-------|----|---------------|-------|        
         8|JOAO   |M   |               |86695-6|
----------|-------|----|---------------|-------|        
 
 ###### TABELA ENDERECO
 IDENDERECO|RUA  |BAIRRO  |CIDADE        |ESTADO|ID_CLIENTE|
@@ -47,3 +39,17 @@ IDTELEFONE|TIPO|NUMERO |ID_CLIENTE|
         12|RES |5754644|         6|
 ------------
 #### JOINS
+
+```sql
+SELECT NOME, SEXO, BAIRRO, CIDADE
+FROM CLIENTE
+INNER JOIN ENDERECO
+ON IDCLIENTE = ID_CLIENTE
+WHERE BAIRRO = 'CENTRO';
+```
+######  Resultado
+NOME |SEXO|BAIRRO|CIDADE        |
+-----|----|------|--------------|
+JORGE|M   |CENTRO|B. HORIZONTE  |
+JOAO |M   |CENTRO|RIO DE JANEIRO|
+CELIA|F   |CENTRO|NITERÃ“I      |

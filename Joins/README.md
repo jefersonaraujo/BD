@@ -1,41 +1,41 @@
 ###### TABELA CLIENTE
 IDCLIENTE|NOME   |SEXO|EMAIL          |CPF    |
 ---------|-------|----|---------------|-------|
-        1|JOAO   |M   |JOAO@IG.COM    |98547-6
-        2|CARLOS |M   |CARLOS@TERA.COM|86664-7
-        3|ANA    |F   |ANA@GLOBO.COM  |75658-5
-        4|JORGE  |M   |JORGE@IG.COM   |88657-5
-        5|CLARA  |M   |               |99754-7
-        6|CELIA  |F   |JOAO@TERRA.COM |77558-5
-        7|ANTONIO|M   |               |78558-6
-        8|JOAO   |M   |               |86695-6
+        1|JOAO   |M   |JOAO@IG.COM    |98547-6|
+        2|CARLOS |M   |CARLOS@TERA.COM|86664-7|
+        3|ANA    |F   |ANA@GLOBO.COM  |75658-5|
+        4|JORGE  |M   |JORGE@IG.COM   |88657-5|
+        5|CLARA  |M   |               |99754-7|
+        6|CELIA  |F   |JOAO@TERRA.COM |77558-5|
+        7|ANTONIO|M   |               |78558-6|
+        8|JOAO   |M   |               |86695-6|
 
 ###### TABELA ENDERECO
-IDENDERECO|RUA  |BAIRRO  |CIDADE        |ESTADO|ID_CLIENTE
+IDENDERECO|RUA  |BAIRRO  |CIDADE        |ESTADO|ID_CLIENTE|
 ----------|-----|--------|--------------|------|----------|
-         1|RUA A|CENTRO  |B. HORIZONTE  |MG    |         4
-         2|RUA B|CENTRO  |RIO DE JANEIRO|RJ    |         1
-         3|RUA C|JARDINS |SAO PAULO     |SP    |         3
-         4|RUA B|ESTACIO |RIO DE JANEIRO|RJ    |         8
-         5|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |         2
-         6|RUA X|FLAMENGO|RIO DE JANEIRO|RJ    |         7
-         7|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |         5
-         8|RUA X|CENTRO  |NITERÃ“I      |RJ    |         6
+         1|RUA A|CENTRO  |B. HORIZONTE  |MG    |         4|
+         2|RUA B|CENTRO  |RIO DE JANEIRO|RJ    |         1|
+         3|RUA C|JARDINS |SAO PAULO     |SP    |         3|
+         4|RUA B|ESTACIO |RIO DE JANEIRO|RJ    |         8|
+         5|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |         2|
+         6|RUA X|FLAMENGO|RIO DE JANEIRO|RJ    |         7|
+         7|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |         5|
+         8|RUA X|CENTRO  |NITERÃ“I      |RJ    |         6|
 
 ###### TABELA TELEFONE
-IDTELEFONE|TIPO|NUMERO |ID_CLIENTE
-----------|----|-------|----------
-         1|CEL |9955331|         1
-         2|COM |6574565|         3
-         3|CEL |8864566|         2
-         4|CEL |5557798|         7
-         5|COM |6765768|         1
-         6|RES |5676765|         6
-         7|CEL |5765547|         1
-         8|CEL |8865645|         7
-         9|RES |7555446|         7
-        10|CEL |5788654|         3
-        11|CEL |7865644|         6
-        12|RES |5754644|         6
+IDTELEFONE|TIPO|NUMERO |ID_CLIENTE|
+----------|----|-------|----------|
+         1|CEL |9955331|         1|
+         2|COM |6574565|         3|
+         3|CEL |8864566|         2|
+         4|CEL |5557798|         7|
+         5|COM |6765768|         1|
+         6|RES |5676765|         6|
+         7|CEL |5765547|         1|
+         8|CEL |8865645|         7|
+         9|RES |7555446|         7|
+        10|CEL |5788654|         3|
+        11|CEL |7865644|         6|
+        12|RES |5754644|         6|
 ------------
 #### JOINS

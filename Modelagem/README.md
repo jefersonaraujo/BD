@@ -11,7 +11,9 @@
 **CADINALIDADE**
 
 *QUEM DEFINE A CARDINALIDADE  A REGRA DE NEGOCIOS *
-![](https://raw.githubusercontent.com/jefersonaraujo/BD/master/Img/der.PNG)
+
+[![DER](https://raw.githubusercontent.com/jefersonaraujo/BD/master/Img/der.PNG "DER")](https://raw.githubusercontent.com/jefersonaraujo/BD/master/Img/der.PNG "DER")
+
 PRIMEIRO ALGARISMO - OBRIGATORIEDADE
 0 - NAO OBRIGATORIO
 1 - OBRIGATORIO

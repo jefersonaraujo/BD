@@ -1,104 +1,24 @@
-###### TABELA CLIENTE
-IDCLIENTE|NOME   |SEXO|EMAIL |CPF    |
----------|-------|----|---------------|-------|
-1|JOAO   |M   |JOAO@IG.COM    |98547-6|
-2|CARLOS |M   |CARLOS@TERA.COM|86664-7|
-3|ANA    |F   |ANA@GLOBO.COM  |75658-5|
-4|JORGE  |M   |JORGE@IG.COM   |88657-5|
-5|CLARA  |M   ||99754-7|
-6|CELIA  |F   |JOAO@TERRA.COM |77558-5|
-7|ANTONIO|M   ||78558-6|
-8|JOAO   |M   ||86695-6|
+####  Procedures   
+> ###### Stored Procedure, que traduzido significa Procedimento Armazenado, é uma conjunto de comandos em SQL que podem ser executados de uma só vez, como em uma função. Ele armazena tarefas repetitivas e aceita parâmetros de entrada para que a tarefa seja efetuada de acordo com a necessidade individual.
 
-###### TABELA ENDERECO
-IDENDERECO|RUA  |BAIRRO  |CIDADE|ESTADO|ID_CLIENTE|
-----------|-----|--------|--------------|------|----------|
-1|RUA A|CENTRO  |B. HORIZONTE  |MG    |4|
-2|RUA B|CENTRO  |RIO DE JANEIRO|RJ    |1|
-3|RUA C|JARDINS |SAO PAULO     |SP    |3|
-4|RUA B|ESTACIO |RIO DE JANEIRO|RJ    |8|
-5|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |2|
-6|RUA X|FLAMENGO|RIO DE JANEIRO|RJ    |7|
-7|RUA Z|CRUZEIRO|B. HORIZONTE  |MG    |5|
-8|RUA X|CENTRO  |NITERÃ“I|RJ    |6|
 
-###### TABELA TELEFONE
-IDTELEFONE|TIPO|NUMERO |ID_CLIENTE|
-----------|----|-------|----------|
-1|CEL |9955331|1|
-2|COM |6574565|3|
-3|CEL |8864566|2|
-4|CEL |5557798|7|
-5|COM |6765768|1|
-6|RES |5676765|6|
-7|CEL |5765547|1|
-8|CEL |8865645|7|
-9|RES |7555446|7|
-10|CEL |5788654|3|
-11|CEL |7865644|6|
-12|RES |5754644|6|
-------------
-#### JOINS
+Durante a execução usa-se um delimitador, no caso troca o caractere padrão ";", para qualquer outro, execulta o escopo da procedure e volta ao demilitador padrão.
 
 ```sql
-SELECT NOME, SEXO, BAIRRO, CIDADE
-FROM CLIENTE
-INNER JOIN ENDERECO
-ON IDCLIENTE = ID_CLIENTE
-WHERE BAIRRO = 'CENTRO';
+DELIMITER $
+CREATE PROCEDURE CONTA1()
+BEGIN
+		SELECT 10 + 10 AS "CONTA";
+END
+$
+/* Voltar ao deminitador ';' */
+DELIMITER ;
 ```
-######  Resultado
-NOME |SEXO|BAIRRO|CIDADE|
------|----|------|--------------|
-JORGE|M   |CENTRO|B. HORIZONTE  |
-JOAO |M   |CENTRO|RIO DE JANEIRO|
-CELIA|F   |CENTRO|NITERÃ“I|
-------------
 
 ```sql
-SELECT C.NOME, C.SEXO,
-       E.BAIRRO, E.CIDADE,
-       T.TIPO, T.NUMERO
-FROM CLIENTE C
-INNER JOIN ENDERECO E
-ON C.IDCLIENTE = E.ID_CLIENTE
-INNER JOIN TELEFONE T
-ON C.IDCLIENTE = T.ID_CLIENTE;
+CALL CONTA();
+/* CHAMANDO A PROCEDURE*/
 ```
-######  Resultado
-NOME   |SEXO|BAIRRO  |CIDADE        |TIPO|NUMERO |
--------|----|--------|--------------|----|-------|
-JOAO   |M   |CENTRO  |RIO DE JANEIRO|CEL |9955331|
-ANA    |F   |JARDINS |SAO PAULO     |COM |6574565|
-CARLOS |M   |CRUZEIRO|B. HORIZONTE  |CEL |8864566|
-ANTONIO|M   |FLAMENGO|RIO DE JANEIRO|CEL |5557798|
-JOAO   |M   |CENTRO  |RIO DE JANEIRO|COM |6765768|
-CELIA  |F   |CENTRO  |NITERÃ“I      |RES |5676765|
-JOAO   |M   |CENTRO  |RIO DE JANEIRO|CEL |5765547|
-ANTONIO|M   |FLAMENGO|RIO DE JANEIRO|CEL |8865645|
-ANTONIO|M   |FLAMENGO|RIO DE JANEIRO|RES |7555446|
-ANA    |F   |JARDINS |SAO PAULO     |CEL |5788654|
-CELIA  |F   |CENTRO  |NITERÃ“I      |CEL |7865644|
-CELIA  |F   |CENTRO  |NITERÃ“I      |RES |5754644|
-------------
-
-```sql
-SELECT C.NOME AS "CLIENTE",
-	   IFNULL(C.EMAIL,'SEM EMAIL') AS "EMAIL",
-	   T.NUMERO AS "CELULAR"
-FROM CLIENTE C
-INNER JOIN TELEFONE T
-ON C.IDCLIENTE = T.ID_CLIENTE
-INNER JOIN ENDERECO E
-ON C.IDCLIENTE = E.ID_CLIENTE
-WHERE TIPO = 'CEL' AND ESTADO = 'RJ';
-```
-######  Resultado
-
-CLIENTE|EMAIL         |CELULAR|
--------|--------------|-------|
-JOAO   |JOAO@IG.COM   |9955331|
-ANTONIO|SEM EMAIL     |5557798|
-JOAO   |JOAO@IG.COM   |5765547|
-ANTONIO|SEM EMAIL     |8865645|
-CELIA  |JOAO@TERRA.COM|7865644|
+CONTA|
+-----|
+20|

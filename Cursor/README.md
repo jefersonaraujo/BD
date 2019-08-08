@@ -1,40 +1,31 @@
 #### TRIGGER
 
 ```sql
-create table USUARIO(
-	IDUSUARIO INT primary key auto_increment,
-	NOME VARCHAR(30),
-	LOGIN VARCHAR(30),
-	SENHA VARCHAR(100)
-);
-```
+create procedure INSERIRDADOS()
+	begin
+		declare fim int default 0;
+		declare var1,var2,var3,vtotal,vmedia int;
+		declare vnome varchar(50);
 
-```sql
-create table BKP_USUARIO(
-	IDBACKUP INT primary key auto_increment,
-	IDUSUARIO INT,
-	NOME VARCHAR(30),
-	LOGIN VARCHAR(30)
-);
-```
+		declare REG CURSOR FOR(
+			select nome,jan,fev,mar from vendedores = 1;
+		);
 
+		open REG;
 
-```sql
-DELIMITER ;
-create trigger BACKUP_USER
-before delete on USUARIO
-for each row
-begin
+		REPEAT
+			FETCH REG INTO vnome,var1,var2,var3;
+			IF NOT FIM THEN
 
-	insert into BKP_USUARIO values(null,old.IDUSUARIO,old.NOME,old.LOGIN);
-end
-$
-delimiter ;
-drop trigger BACKUP_USER;
-insert into USUARIO values (null,'TESTE','TESTE01','FDFDF');
+					SET vtotal = var1 + var2 + var3;
+					SET vmedia = vtotal / 3;
 
-select * from usuario;
-select * from bkp_usuario;
+					INSERT INTO VENT_TOTAL values (vnome,var1,var2,var3);
+			END IF;
 
-delete from usuario where idusuario = 1
+			UNTIL FIM END REPEAT;
+
+			CLOSE REG;
+
+	end
 ```

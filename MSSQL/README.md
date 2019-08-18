@@ -8,3 +8,26 @@
 ##### MSSQL trabalha com comandos assíncronos  empacotados, quando enviamos uma query ele poderá em uma sequencia diferente, pois irá executar o comando de menor custo. Para "quebrar" ou "dividir" esse pacotes de comandos na sequencia que gostaríamos, podemos aplicar o delimitador "GO".
 
 #####  SP_COLUMS TABELA : Descrição da tabela
+
+## Funções
+
+###### Pegar data
+
+```sql
+SELECT GETDATE()
+GO
+
+
+/* IFNULL */
+
+SELECT  A.NOME,
+		ISNULL(T.TIPO, 'SEM') AS "TIPO",
+		ISNULL(T.NUMERO,'NUMERO') AS "TELEFONE",
+		E.BAIRRO,
+		E.UF
+FROM ALUNO A LEFT JOIN TELEFONE T
+ON A.IDALUNO = T.ID_ALUNO
+INNER JOIN ENDERECO E
+ON A.IDALUNO = E.ID_ALUNO
+GO
+```

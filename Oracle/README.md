@@ -19,3 +19,9 @@
 ######  Em memória - É alterado automaticamente, para isso necessita ser dinâmico. SCOPE = MEMORY.
 ###### SPFILE - Alteração válida somente após reinicialização e não vai estar em memória. Por mais que seja dinâmico, não desejo fazer no mesmo momento. SCOPE = SPFILE
 ###### No mesmo momento e persistente - Devo trabalhar com um parâmetro dinâmico e deixar em escopo, pois ele tratará como padrão SCOPE=BOOTH.
+
+##### Testando parâmetro
+#O comando ALTER SET reconfigura  um parâmetro apenas para sessão corrente ou seja é ideal para testar algo como por exemplo, performance. Ao  desligar a sessão, a alteração desfeita e não está disponível para nenhuma outra sessão.
+{code}
+seçect * from v$parameter
+{code}

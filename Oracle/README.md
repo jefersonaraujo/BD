@@ -17,4 +17,5 @@
 ###### 3 - No mesmo momento
 
 ######  Em memória - É alterado automaticamente, para isso necessita ser dinâmico. SCOPE = MEMORY.
-###### SPFILE - Alteração válida somente após reinicialização e não vai estar em memória. Por mais que seja dinâmico, não desejo fazer no mesmo momento. 
+###### SPFILE - Alteração válida somente após reinicialização e não vai estar em memória. Por mais que seja dinâmico, não desejo fazer no mesmo momento. SCOPE = SPFILE
+###### No mesmo momento e persistente - Devo trabalhar com um parâmetro dinâmico e deixar em escopo, pois ele tratará como padrão SCOPE=BOOTH.

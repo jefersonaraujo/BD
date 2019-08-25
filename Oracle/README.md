@@ -28,3 +28,7 @@ seçect * from v$parameter
 
 
 ##### Startar servico : emctl start  dbconsole  
+##### Verificando o Ambiente : SELECT METADATA FROM SYS.KOPM$;
+##### B023 -> 32 BITS
+##### B047 -> 64 BITS
+##### DICIONARIO DE DADOS : SLECT * FROM DICT;

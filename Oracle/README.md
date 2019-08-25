@@ -25,3 +25,6 @@
 {code}
 seçect * from v$parameter
 {code}
+
+
+##### Startar servico : emctl start  dbconsole  

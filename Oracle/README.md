@@ -22,17 +22,23 @@
 
 ##### Testando parâmetro
 #O comando ALTER SET reconfigura  um parâmetro apenas para sessão corrente ou seja é ideal para testar algo como por exemplo, performance. Ao  desligar a sessão, a alteração desfeita e não está disponível para nenhuma outra sessão.
-{code}
+```sql
 seçect * from v$parameter
-{code}
+
+```
 
 
 ##### Startar servico : emctl start  dbconsole  
 ##### Verificando o Ambiente : SELECT METADATA FROM SYS.KOPM$;
-##### B023 -> 32 BITS
-##### B047 -> 64 BITS
-##### DICIONARIO DE DADOS : SELECT * FROM DICT;
-##### NOME BANCO DE DADOS : SELECT NAME  FROM V$DATABASE;
-##### VERSAO BANCO DE DADOS : SELECT BANNER  FROM V$USUARIO;
-##### VERIFICAR PRIVILEGIOS : SELECT *  FROM USER_SYS_PRIVS;
-##### TABELAS DO USUARIO : SELECT  TABLE_NAME  FROM USER_TABLES;
+###### B023 -> 32 BITS
+###### B047 -> 64 BITS
+###### DICIONARIO DE DADOS : SELECT * FROM DICT;
+###### NOME BANCO DE DADOS : SELECT NAME  FROM V$DATABASE;
+###### VERSAO BANCO DE DADOS : SELECT BANNER  FROM V$USUARIO;
+###### VERIFICAR PRIVILEGIOS : SELECT *  FROM USER_SYS_PRIVS;
+###### TABELAS DO USUARIO : SELECT  TABLE_NAME  FROM USER_TABLES;
+###### FORMATANDO COLUNAS
+ ```sql
+ COLUMN NOME FORMAT A10;
+
+  ```
